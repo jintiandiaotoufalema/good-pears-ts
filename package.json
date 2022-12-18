@@ -1,0 +1,46 @@
+{
+  "name": "good-pears-ts",
+  "version": "1.0.0",
+  "description": "good-pears typescript version",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "node .webpack/dev.command.js",
+    "doc": "jsdoc -c jsdoc.json",
+    "tree": "treer  -i '/node_modules|dist|.git|jsdoc.json|docs|tutorials|.DS_Store|.vscode|PearSpectrum/'",
+    "lint": "eslint src --ext .js,.ts --cache --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jintiandiaotoufalema/good-pears-ts.git"
+  },
+  "author": "jintiandiaotoufalema",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^3.6.2"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.5.14",
+    "@typescript-eslint/eslint-plugin": "^5.46.1",
+    "clean-jsdoc-theme": "^4.1.8",
+    "css-loader": "^6.7.2",
+    "eslint": "^8.29.0",
+    "eslint-config-standard-with-typescript": "^24.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.6.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.0",
+    "jsdoc": "^3.6.11",
+    "sass": "^1.57.0",
+    "sass-loader": "^13.2.0",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.4.2",
+    "typescript": "^4.9.4",
+    "webpack": "^5.74.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "bugs": {
+    "url": "https://github.com/jintiandiaotoufalema/good-pears-ts/issues"
+  },
+  "homepage": "https://github.com/jintiandiaotoufalema/good-pears-ts#readme"
+}
