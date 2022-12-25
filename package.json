@@ -1,10 +1,18 @@
 {
   "name": "good-pears-ts",
-  "version": "1.0.0",
+  "version": "1.0.7",
   "description": "good-pears typescript version",
-  "main": "index.ts",
+  "main": "./dist/index.mini.js",
+  "types": "./dist/types/index.d.ts",
+  "files": [
+    "dist/types",
+    "dist/index.mini.js",
+    "dist/main.css"
+  ],
   "scripts": {
-    "dev": "node .webpack/dev.command.js",
+    "clean": "rm dist/bundle.js",
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production && tsc",
     "doc": "jsdoc -c jsdoc.json",
     "tree": "treer  -i '/node_modules|dist|.git|jsdoc.json|docs|tutorials|.DS_Store|.vscode|PearSpectrum/'",
     "lint": "eslint src --ext .js,.ts --cache --fix"
@@ -22,6 +30,8 @@
     "@types/jquery": "^3.5.14",
     "@typescript-eslint/eslint-plugin": "^5.46.1",
     "clean-jsdoc-theme": "^4.1.8",
+    "clean-webpack-plugin": "latest",
+    "copy-webpack-plugin": "latest",
     "css-loader": "^6.7.2",
     "eslint": "^8.29.0",
     "eslint-config-standard-with-typescript": "^24.0.0",
@@ -31,12 +41,14 @@
     "html-loader": "^4.2.0",
     "html-webpack-plugin": "^5.5.0",
     "jsdoc": "^3.6.11",
+    "mini-css-extract-plugin": "latest",
     "sass": "^1.57.0",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.4",
     "webpack": "^5.74.0",
+    "webpack-cli": "latest",
     "webpack-dev-server": "^4.11.1"
   },
   "bugs": {

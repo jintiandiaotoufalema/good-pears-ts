@@ -1,7 +1,7 @@
 import jQuery from "jquery";
 import { eventThrottle } from "./Throttle";
 
-interface onmovefn {
+export interface onmovefn {
   (
     this: UniversalCanvas,
     deltaX: number,
@@ -10,7 +10,7 @@ interface onmovefn {
   ): void;
 }
 
-interface onzoomfn {
+export interface onzoomfn {
   (this: UniversalCanvas, scale: number): void;
 }
 
@@ -23,7 +23,7 @@ interface onzoomfn {
                 .build(document.body)       // 构建
                 .getContainer();            // 获取 content 容器
  */
-class UniversalCanvas {
+ export class UniversalCanvas {
   constructor() {
     // this.switch = false;
     // this.focus = {
@@ -135,7 +135,7 @@ class UniversalCanvas {
     if (!(container instanceof Element))
       throw new Error("[container] 不是 Element");
     if (this.target) throw new Error("请勿重复构建");
-    require('@css/components/universalCanvas.scss');
+    require("@css/components/universalCanvas.scss");
 
     const canvas = jQuery("<div>", { class: "universal-canvas" });
     const zoom = jQuery("<div>", { class: "universal-canvas-zoom" }).css(
@@ -176,17 +176,17 @@ class UniversalCanvas {
           ],
         };
 
-        canvas[0].addEventListener("touchstart", function (e) {
+        canvas[0].addEventListener("touchstart", function (e:TouchEvent) {
           _touches._touches++;
           aaa(e);
         });
 
-        canvas[0].addEventListener("touchend", function (e) {
+        canvas[0].addEventListener("touchend", function (e:TouchEvent) {
           _touches._touches--;
           aaa(e);
         });
 
-        function aaa(e: TouchEvent) {
+        const aaa = (e: TouchEvent)=>{
           try {
             switch (_touches._touches) {
               case 0:
@@ -469,8 +469,6 @@ class UniversalCanvas {
     return this;
   }
 }
-
-export { UniversalCanvas };
 
 /**
  * 万向画布相关

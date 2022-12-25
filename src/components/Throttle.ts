@@ -1,4 +1,4 @@
-interface ThrottleConfig {
+export interface ThrottleConfig {
     /**
      * 节流间隔
      */
@@ -14,7 +14,7 @@ interface ThrottleConfig {
  * @example
  * document.body.addEventListener("wheel", eventThrottle((event) => {}));
  */
-const eventThrottle = function(fn: Function, config?:ThrottleConfig){
+export const eventThrottle = function(fn: Function, config?:ThrottleConfig){
     const _config = Object.assign({
         delay: 20,
         triggerLast: false
@@ -39,11 +39,6 @@ const eventThrottle = function(fn: Function, config?:ThrottleConfig){
             }
         }
     }
-};
-
-
-export {
-    eventThrottle
 };
 
 /**
