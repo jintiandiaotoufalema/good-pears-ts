@@ -444,7 +444,7 @@ export interface onzoomfn {
   /**
    * 获取容器
    */
-  getContainer(): Element | false {
+  getContainer(): HTMLElement | false {
     return this.content || null;
   }
   /**
@@ -457,14 +457,10 @@ export interface onzoomfn {
    * 监听 move 事件
    */
   listenMove(fn: onmovefn): UniversalCanvas {
-    if (!(fn instanceof Function)) throw new Error("[fn] 不是 Function");
-
     this.onmove = fn;
     return this;
   }
   listenScale(fn: onzoomfn): UniversalCanvas {
-    if (!(fn instanceof Function)) throw new Error("[fn] 不是 Function");
-
     this.onzoom = fn;
     return this;
   }
